@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+  trans:
+    # TODO: Use more stable tag
+    image: nwtgck/trans-server-akka:docker-trigger-1
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - 8080:80
+    command: --db-url="jdbc:h2:tcp://db//h2db/trans"
+    volumes:
+      - ./docker_volumes/trans-db:/trans/db
+
+  db:
+    # TODO: Use more stable tag
+    image: nwtgck/h2database:develop
+    restart: always
+    command: -tcpAllowOthers -webAllowOthers
+    ports:
+      - 8082:8082
+    volumes:
+      - ./docker_volumes/h2db:/h2db
