@@ -13,8 +13,7 @@ services:
       - ./docker_volumes/trans-db:/trans/db
 
   db:
-    # TODO: Use more stable tag
-    image: nwtgck/h2database:develop
+    image: nwtgck/h2database:v1.4.197
     restart: always
     command: -tcpAllowOthers -webAllowOthers
     ports:
