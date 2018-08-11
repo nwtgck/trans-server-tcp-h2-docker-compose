@@ -1,5 +1,5 @@
-# trans-server-docker-compose
-`docker-compose.yml` for [trans-server](https://github.com/nwtgck/trans-server-akka)
+# trans-server-tcp-h2-docker-compose
+[Trans Server](https://github.com/nwtgck/trans-server-akka) on server-mode H2 Database
 
 ## Run
 
