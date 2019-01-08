@@ -1,13 +1,13 @@
 version: '3.1'
 services:
   trans:
-    image: nwtgck/trans-server-akka:v1.17.0
+    image: nwtgck/trans-server-akka:v1.19.5
     depends_on:
       - db
     restart: always
     ports:
       - 8080:80
-    command: --db-url="jdbc:h2:tcp://db//h2db/trans"
+    command: --http-port=80 --db-url="jdbc:h2:tcp://db//h2db/trans"
     volumes:
       - ./docker_volumes/trans-db:/trans/db
 
